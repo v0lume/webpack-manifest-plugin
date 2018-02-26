@@ -9,22 +9,22 @@
   "author": "Dane Thurber <dane.thurber@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=6.5.0"
   },
   "peerDependencies": {
     "webpack": "2 || 3 || 4"
   },
   "devDependencies": {
-    "codecov": "^2.2.0",
-    "css-loader": "^0.9.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^0.9.0",
-    "jasmine": "^2.2.1",
-    "memory-fs": "^0.2.0",
-    "nyc": "^10.3.2",
-    "rimraf": "^2.6.1",
-    "style-loader": "^0.8.3",
-    "webpack": "^3.5.2"
+    "codecov": "^3.0.0",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.10",
+    "jasmine": "^3.1.0",
+    "memory-fs": "^0.4.1",
+    "nyc": "^11.4.1",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.0.1"
   },
   "files": [
     "index.js",
@@ -40,7 +40,8 @@
   "homepage": "https://github.com/danethurber/webpack-manifest-plugin",
   "dependencies": {
     "fs-extra": "^0.30.0",
-    "lodash": ">=3.5 <5"
+    "lodash": ">=3.5 <5",
+    "tapable": "^1.0.0"
   },
   "nyc": {
     "reporter": [

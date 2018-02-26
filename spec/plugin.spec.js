@@ -316,9 +316,15 @@ describe('ManifestPlugin', function() {
         context: __dirname,
         entry: './fixtures/file.txt',
         module: {
-          loaders: [
-            { test: /\.(txt)/, loader: 'file-loader?name=file.[ext]' },
-          ]
+          rules: [{
+            test: /\.(txt)/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]'
+              }
+            }]
+          }]
         }
       }, {}, function(manifest, stats) {
         expect(manifest).toBeDefined();
@@ -336,9 +342,15 @@ describe('ManifestPlugin', function() {
         context: __dirname,
         entry: './fixtures/file.txt',
         module: {
-          loaders: [
-            { test: /\.(txt)/, loader: 'file-loader?name=outputfile.[ext]' },
-          ]
+          rules: [{
+            test: /\.(txt)/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: 'outputfile.[ext]'
+              }
+            }]
+          }]
         }
       }, {}, function(manifest, stats) {
         expect(manifest).toBeDefined();
@@ -401,7 +413,7 @@ describe('ManifestPlugin', function() {
           filename: '[name].js'
         },
         module: {
-          loaders: [{
+          rules: [{
             test: /\.css$/,
             loader: ExtractTextPlugin.extract({
               fallback: 'style-loader',
